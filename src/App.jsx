@@ -117,11 +117,9 @@ export default function CreativeAIChat() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/openrouter/v1/chat/completions", {
+      const response = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           model: "openrouter/free",
           messages: [
